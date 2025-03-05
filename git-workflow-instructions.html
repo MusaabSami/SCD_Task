@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project OMG: Git Workflow Challenge</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-light: #ecf0f1;
+            --background-dark: #f4f4f4;
+            --text-color: #333;
+            --warning-color: #e74c3c;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-dark);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--warning-color));
+        }
+
+        .company-info {
+            background-color: var(--background-light);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .company-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .task-list {
+            padding: 30px;
+        }
+
+        .task-list h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .task-list ol {
+            list-style-type: none;
+            counter-reset: item;
+        }
+
+        .task-list li {
+            counter-increment: item;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--background-light);
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .task-list li:hover {
+            transform: scale(1.02);
+            box-shadow: var(--card-shadow);
+        }
+
+        .task-list li::before {
+            content: counter(item) '.';
+            position: absolute;
+            top: 15px;
+            left: -40px;
+            font-size: 2em;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .task-list li strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 5px solid var(--warning-color);
+            color: var(--warning-color);
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .task-list li::before {
+                position: static;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Project OMG: Git Workflow Challenge</h1>
+        </div>
+        
+        <div class="company-info">
+            <h2>Company Context</h2>
+            <p>You are a developer at Emumba, a fast-growing software company working on Project OMG, a revolutionary application that will change the way users interact with cloud-based systems.</p>
+        </div>
+        
+        <div class="task-list">
+            <h2>Git Workflow Tasks</h2>
+            <ol>
+                <li>
+                    <strong>Bootstrapping the Project</strong>
+                    <p>Initialize a Git repository, stage all files, commit them, and push the initial version to a remote repository.</p>
+                </li>
+                
+                <li>
+                    <strong>First Major Edit</strong>
+                    <p>Update the product documentation (doc.txt), commit the changes, and push them to the master branch.</p>
+                </li>
+                
+                <li>
+                    <strong>A New Feature in the Works</strong>
+                    <p>Create a new branch (b1), add a new file (file2.txt), commit it, and push this branch to the remote repository.</p>
+                </li>
+                
+                <li>
+                    <strong>The Merge Challenge</strong>
+                    <p>Switch back to master, merge b1 seamlessly, and push the final version.</p>
+                </li>
+                
+                <li>
+                    <strong>Keeping the Codebase Clean</strong>
+                    <p>Delete branch b1 locally and remotely to prevent clutter.</p>
+                </li>
+                
+                <li>
+                    <strong>Marking a Milestone</strong>
+                    <p>Tag the latest version as v1.0 for release. Then, as per the team lead's request, remove the tag both locally and remotely.</p>
+                </li>
+            </ol>
+            
+            <div class="warning">
+                <p>Note: A surprise code review is imminent. Ensure your Git history is clean, well-structured, and properly documented!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
